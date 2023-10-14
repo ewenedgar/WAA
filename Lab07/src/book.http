@@ -1,0 +1,44 @@
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "email": "jane@gmail.com",
+  "roles": ["USER"],
+  "password": "test123"
+}
+
+
+### get all books
+GET http://localhost:8080/books
+Authorization: Basic jane@gmail.com test123
+
+### get book by id
+GET http://localhost:8080/books/2
+Authorization: Basic jane@gmail.com test123
+
+### create new book
+POST http://localhost:8080/books
+Authorization: Basic john@gmail.com admin123
+Content-Type: application/json
+
+{
+  "title": "Ego is the Enemy",
+  "author": "Ryan Halliday"
+}
+
+### update book
+PUT http://localhost:8080/books/2
+Authorization: Basic john@gmail.com admin123
+Content-Type: application/json
+
+{
+  "title": "Animal Farm UPDATED - John",
+  "author": "George Orwell"
+}
+
+### delete book
+DELETE http://localhost:8080/books/2
+Authorization: Basic jane@gmail.com test123
+
